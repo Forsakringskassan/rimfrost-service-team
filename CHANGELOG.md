@@ -2,6 +2,12 @@
 
 Changelog of rimfrost-service-team.
 
+## 0.0.3 (2026-08-18)
+
+### Bug Fixes
+
+-  Add quarkus-smallrye-health dependency for health endpoint ([acd23](https://github.com/Forsakringskassan/rimfrost-service-team/commit/acd23019de55302) Ulf Slunga)  
+
 ## 0.0.2 (2026-08-18)
 
 ### Bug Fixes
