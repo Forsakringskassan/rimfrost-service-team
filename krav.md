@@ -44,3 +44,11 @@ finns på plats.
 - **TEAM-FR-02.3** Individ C (`varde=333333333`) ska returnera Team Göteborg (2).
 - **TEAM-FR-02.4** Okänt `idVarde` ska returnera HTTP 404.
 - **TEAM-FR-02.5** Om `idTyp` inte matchar stub-datans `typId` ska HTTP 404 returneras.
+
+---
+
+## Icke-funktionella krav
+
+### TEAM-NFR-01 — Tillgänglighet
+
+- **TEAM-NFR-01.1** Tjänsten ska exponera en liveness-endpoint (`/q/health/live`) för användning av orkestreringsplattformen.

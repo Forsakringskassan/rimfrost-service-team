@@ -30,6 +30,10 @@
       <artifactId>quarkus-hibernate-validator</artifactId>
     </dependency>
     <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-smallrye-health</artifactId>
+    </dependency>
+    <dependency>
       <groupId>se.fk.rimfrost</groupId>
       <artifactId>rimfrost-service-team-openapi-jaxrs-spec</artifactId>
       <version>0.0.1</version>
