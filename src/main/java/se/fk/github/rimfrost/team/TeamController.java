@@ -80,9 +80,16 @@ public class TeamController implements TeamControllerApi
    @Override
    public GetIndividTeamResponse getIndividTeam(String idTyp, String idVarde)
    {
-      if (!TYP_ID.toString().equals(idTyp))
+      try
       {
-         throw new NotFoundException("Individ not found: " + idTyp + "/" + idVarde);
+         if (!TYP_ID.equals(UUID.fromString(idTyp)))
+         {
+            throw new NotFoundException("Unknown idTyp: " + idTyp);
+         }
+      }
+      catch (IllegalArgumentException e)
+      {
+         throw new NotFoundException("Unknown idTyp: " + idTyp);
       }
       List<Team> teams = INDIVID_TEAMS.get(idVarde);
       if (teams == null)
