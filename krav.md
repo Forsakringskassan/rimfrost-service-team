@@ -12,9 +12,9 @@ finns på plats.
 
 | Beteckning | typId                                  | varde       |
 |------------|----------------------------------------|-------------|
-| Individ A  | `4c34906c-03d9-425f-9a1a-062ef6eb88c7` | `111111111` |
-| Individ B  | `4c34906c-03d9-425f-9a1a-062ef6eb88c7` | `222222222` |
-| Individ C  | `4c34906c-03d9-425f-9a1a-062ef6eb88c7` | `333333333` |
+| Individ A  | `116759e4-18fd-4209-849c-90abbd257d22` | `111111111` |
+| Individ B  | `116759e4-18fd-4209-849c-90abbd257d22` | `222222222` |
+| Individ C  | `116759e4-18fd-4209-849c-90abbd257d22` | `333333333` |
 
 ### Team
 
@@ -43,3 +43,4 @@ finns på plats.
 - **TEAM-FR-02.2** Individ B (`varde=222222222`) ska returnera Team Malmö (3) och Team Uppsala (4).
 - **TEAM-FR-02.3** Individ C (`varde=333333333`) ska returnera Team Göteborg (2).
 - **TEAM-FR-02.4** Okänt `idVarde` ska returnera HTTP 404.
+- **TEAM-FR-02.5** Om `idTyp` inte matchar stub-datans `typId` ska HTTP 404 returneras.

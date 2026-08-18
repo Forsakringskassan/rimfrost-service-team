@@ -17,7 +17,7 @@ import org.junit.jupiter.api.Test;
 class TeamControllerTest
 {
 
-   private static final String TYP_ID = "4c34906c-03d9-425f-9a1a-062ef6eb88c7";
+   private static final String TYP_ID = "116759e4-18fd-4209-849c-90abbd257d22";
 
    // TEAM-FR-01 — GET /team/{teamId}/individer
 
@@ -87,7 +87,7 @@ class TeamControllerTest
    void getIndividTeam_individA_returnsGoteborgAndUppsala()
    {
       given()
-            .when().get("/individ/stub/111111111/team")
+            .when().get("/individ/" + TYP_ID + "/111111111/team")
             .then()
             .statusCode(200)
             .body("team", hasSize(2))
@@ -100,7 +100,7 @@ class TeamControllerTest
    void getIndividTeam_individB_returnsMalmoAndUppsala()
    {
       given()
-            .when().get("/individ/stub/222222222/team")
+            .when().get("/individ/" + TYP_ID + "/222222222/team")
             .then()
             .statusCode(200)
             .body("team", hasSize(2))
@@ -113,7 +113,7 @@ class TeamControllerTest
    void getIndividTeam_individC_returnsGoteborg()
    {
       given()
-            .when().get("/individ/stub/333333333/team")
+            .when().get("/individ/" + TYP_ID + "/333333333/team")
             .then()
             .statusCode(200)
             .body("team", hasSize(1))
@@ -126,7 +126,17 @@ class TeamControllerTest
    void getIndividTeam_unknownVarde_returns404()
    {
       given()
-            .when().get("/individ/stub/999999999/team")
+            .when().get("/individ/" + TYP_ID + "/999999999/team")
+            .then()
+            .statusCode(404);
+   }
+
+   /** TEAM-FR-02.5 */
+   @Test
+   void getIndividTeam_wrongTypId_returns404()
+   {
+      given()
+            .when().get("/individ/wrong-typ-id/111111111/team")
             .then()
             .statusCode(404);
    }
