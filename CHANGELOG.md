@@ -2,6 +2,13 @@
 
 Changelog of rimfrost-service-team.
 
+## 0.0.2 (2026-08-18)
+
+### Bug Fixes
+
+-  Parse idTyp as UUID before comparing to handle case-insensitive input ([ec661](https://github.com/Forsakringskassan/rimfrost-service-team/commit/ec6619f7d1f7b05) Ulf Slunga)  
+-  Validate idTyp in getIndividTeam and align TYP_ID to HANDLAGGARE_ID ([b4cb3](https://github.com/Forsakringskassan/rimfrost-service-team/commit/b4cb393216d3b3d) Ulf Slunga)  
+
 ## 0.0.1 (2026-08-18)
 
 ### Bug Fixes
