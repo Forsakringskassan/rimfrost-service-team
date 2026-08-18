@@ -25,7 +25,7 @@ import se.fk.rimfrost.jaxrsspec.controllers.generatedsource.model.Team;
 public class TeamController implements TeamControllerApi
 {
 
-   private static final UUID TYP_ID = UUID.fromString("4c34906c-03d9-425f-9a1a-062ef6eb88c7");
+   private static final UUID TYP_ID = UUID.fromString("116759e4-18fd-4209-849c-90abbd257d22");
 
    private static final Idtyp INDIVID_A = new Idtyp(TYP_ID, "111111111");
    private static final Idtyp INDIVID_B = new Idtyp(TYP_ID, "222222222");
@@ -72,14 +72,18 @@ public class TeamController implements TeamControllerApi
    /**
     * Returns all teams the individ belongs to (TEAM-FR-02).
     *
-    * @param idTyp the type of identifier (ignored in stub)
+    * @param idTyp the type of identifier; must match the stub's {@code TYP_ID}
     * @param idVarde the identifier value
     * @return response containing the individ's teams
-    * @throws NotFoundException if idVarde is not recognised
+    * @throws NotFoundException if idTyp or idVarde is not recognised
     */
    @Override
    public GetIndividTeamResponse getIndividTeam(String idTyp, String idVarde)
    {
+      if (!TYP_ID.toString().equals(idTyp))
+      {
+         throw new NotFoundException("Individ not found: " + idTyp + "/" + idVarde);
+      }
       List<Team> teams = INDIVID_TEAMS.get(idVarde);
       if (teams == null)
       {
