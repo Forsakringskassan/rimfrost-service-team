@@ -7,11 +7,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
-import se.fk.rimfrost.jaxrsspec.controllers.generatedsource.TeamControllerApi;
-import se.fk.rimfrost.jaxrsspec.controllers.generatedsource.model.GetIndividTeamResponse;
-import se.fk.rimfrost.jaxrsspec.controllers.generatedsource.model.GetTeamMembersResponse;
-import se.fk.rimfrost.jaxrsspec.controllers.generatedsource.model.Idtyp;
-import se.fk.rimfrost.jaxrsspec.controllers.generatedsource.model.Team;
+import se.fk.rimfrost.team.jaxrsspec.controllers.generatedsource.TeamControllerApi;
+import se.fk.rimfrost.team.jaxrsspec.controllers.generatedsource.model.GetIndividTeamResponse;
+import se.fk.rimfrost.team.jaxrsspec.controllers.generatedsource.model.GetTeamMembersResponse;
+import se.fk.rimfrost.team.jaxrsspec.controllers.generatedsource.model.Idtyp;
+import se.fk.rimfrost.team.jaxrsspec.controllers.generatedsource.model.Team;
 
 /**
  * Hardcoded stub implementation of {@link TeamControllerApi}.
