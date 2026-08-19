@@ -2,6 +2,12 @@
 
 Changelog of rimfrost-service-team.
 
+## 0.0.4 (2026-08-19)
+
+### Bug Fixes
+
+-  bump team-openapi-jaxrs-spec to 0.0.2 with corrected package name ([9b5cf](https://github.com/Forsakringskassan/rimfrost-service-team/commit/9b5cfcccc0ee916) Ulf Slunga)  
+
 ## 0.0.3 (2026-08-18)
 
 ### Bug Fixes
