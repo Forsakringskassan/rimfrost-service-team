@@ -2,7 +2,6 @@ package se.fk.github.rimfrost.team;
 
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
 /**
  * Hardcoded stub of handläggare → behörigheter, using the same identities as
@@ -11,8 +10,6 @@ import java.util.UUID;
  */
 final class BehorighetStub
 {
-
-   private static final UUID TYP_ID = UUID.fromString("116759e4-18fd-4209-849c-90abbd257d22");
 
    /** Maps individ varde → behörigheter. */
    private static final Map<String, List<Behorighet>> HANDLAGGARE_BEHORIGHETER = Map.of(
@@ -35,14 +32,7 @@ final class BehorighetStub
     */
    static List<Behorighet> getBehorigheter(String idTyp, String idVarde)
    {
-      try
-      {
-         if (!TYP_ID.equals(UUID.fromString(idTyp)))
-         {
-            return null;
-         }
-      }
-      catch (IllegalArgumentException e)
+      if (!HandlaggareIdentitet.isKnownTyp(idTyp) || idVarde == null)
       {
          return null;
       }

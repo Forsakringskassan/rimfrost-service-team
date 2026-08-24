@@ -44,4 +44,18 @@ class BehorighetStubTest
       List<Behorighet> behorigheter = BehorighetStub.getBehorigheter("wrong-typ-id", "111111111");
       assertThat(behorigheter, nullValue());
    }
+
+   @Test
+   void getBehorigheter_nullIdTyp_returnsNull()
+   {
+      List<Behorighet> behorigheter = BehorighetStub.getBehorigheter(null, "111111111");
+      assertThat(behorigheter, nullValue());
+   }
+
+   @Test
+   void getBehorigheter_nullIdVarde_returnsNull()
+   {
+      List<Behorighet> behorigheter = BehorighetStub.getBehorigheter(TYP_ID, null);
+      assertThat(behorigheter, nullValue());
+   }
 }

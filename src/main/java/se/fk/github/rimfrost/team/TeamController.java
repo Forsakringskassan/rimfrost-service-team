@@ -25,7 +25,7 @@ import se.fk.rimfrost.team.jaxrsspec.controllers.generatedsource.model.Team;
 public class TeamController implements TeamControllerApi
 {
 
-   private static final UUID TYP_ID = UUID.fromString("116759e4-18fd-4209-849c-90abbd257d22");
+   private static final UUID TYP_ID = HandlaggareIdentitet.TYP_ID;
 
    private static final Idtyp INDIVID_A = new Idtyp(TYP_ID, "111111111");
    private static final Idtyp INDIVID_B = new Idtyp(TYP_ID, "222222222");
@@ -80,14 +80,7 @@ public class TeamController implements TeamControllerApi
    @Override
    public GetIndividTeamResponse getIndividTeam(String idTyp, String idVarde)
    {
-      try
-      {
-         if (!TYP_ID.equals(UUID.fromString(idTyp)))
-         {
-            throw new NotFoundException("Unknown idTyp: " + idTyp);
-         }
-      }
-      catch (IllegalArgumentException e)
+      if (!HandlaggareIdentitet.isKnownTyp(idTyp))
       {
          throw new NotFoundException("Unknown idTyp: " + idTyp);
       }
