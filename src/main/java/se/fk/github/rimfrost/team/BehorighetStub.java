@@ -2,11 +2,16 @@ package se.fk.github.rimfrost.team;
 
 import java.util.List;
 import java.util.Map;
+import se.fk.rimfrost.team.jaxrsspec.controllers.generatedsource.model.Behorighet;
 
 /**
  * Hardcoded stub of handläggare → behörigheter, using the same identities as
  * {@link TeamController}'s stub data. Intended to allow consumers (t.ex. OUL) to integrera
  * mot riktiga handläggare-identiteter innan en riktig behörighetskälla finns på plats.
+ *
+ * <p>Använder API-kontraktets genererade {@link Behorighet}-typ direkt, samma mönster som
+ * {@code TeamController} redan använder för {@code Idtyp}/{@code Team} — ingen egen,
+ * parallell domän-enum som kan hamna i otakt med kontraktet.
  */
 final class BehorighetStub
 {

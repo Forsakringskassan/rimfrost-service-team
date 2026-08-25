@@ -8,6 +8,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 import se.fk.rimfrost.team.jaxrsspec.controllers.generatedsource.TeamControllerApi;
+import se.fk.rimfrost.team.jaxrsspec.controllers.generatedsource.model.Behorighet;
+import se.fk.rimfrost.team.jaxrsspec.controllers.generatedsource.model.GetBehorigheterResponse;
 import se.fk.rimfrost.team.jaxrsspec.controllers.generatedsource.model.GetIndividTeamResponse;
 import se.fk.rimfrost.team.jaxrsspec.controllers.generatedsource.model.GetTeamMembersResponse;
 import se.fk.rimfrost.team.jaxrsspec.controllers.generatedsource.model.Idtyp;
@@ -90,5 +92,24 @@ public class TeamController implements TeamControllerApi
          throw new NotFoundException("Individ not found: " + idVarde);
       }
       return new GetIndividTeamResponse(teams);
+   }
+
+   /**
+    * Returns the given handläggare's behörigheter (FKPOC-931).
+    *
+    * @param idTyp the type of identifier; must match the stub's {@code TYP_ID}
+    * @param idVarde the identifier value
+    * @return response containing the handläggare's behörigheter
+    * @throws NotFoundException if idTyp or idVarde is not recognised
+    */
+   @Override
+   public GetBehorigheterResponse getBehorigheter(String idTyp, String idVarde)
+   {
+      List<Behorighet> behorigheter = BehorighetStub.getBehorigheter(idTyp, idVarde);
+      if (behorigheter == null)
+      {
+         throw new NotFoundException("Handläggare not found: idTyp=" + idTyp + ", idVarde=" + idVarde);
+      }
+      return new GetBehorigheterResponse(behorigheter);
    }
 }
