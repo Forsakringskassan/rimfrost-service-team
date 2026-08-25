@@ -7,10 +7,11 @@ import static org.hamcrest.Matchers.nullValue;
 
 import java.util.List;
 import org.junit.jupiter.api.Test;
+import se.fk.rimfrost.team.jaxrsspec.controllers.generatedsource.model.Behorighet;
 
 /**
- * Unit tests for {@link BehorighetStub}. Inget REST-endpoint finns ännu för denna data
- * (se FKPOC-930 / uppföljande ticket för endpointet) — dessa tester anropar stubben direkt.
+ * Unit tests for {@link BehorighetStub}. Testar stubben direkt, separat från
+ * {@code TeamControllerTest}:s täckning av REST-endpointet (FKPOC-931).
  */
 class BehorighetStubTest
 {

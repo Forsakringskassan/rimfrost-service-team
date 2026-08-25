@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 import se.fk.rimfrost.team.jaxrsspec.controllers.generatedsource.TeamControllerApi;
+import se.fk.rimfrost.team.jaxrsspec.controllers.generatedsource.model.Behorighet;
 import se.fk.rimfrost.team.jaxrsspec.controllers.generatedsource.model.GetBehorigheterResponse;
 import se.fk.rimfrost.team.jaxrsspec.controllers.generatedsource.model.GetIndividTeamResponse;
 import se.fk.rimfrost.team.jaxrsspec.controllers.generatedsource.model.GetTeamMembersResponse;
@@ -109,11 +110,6 @@ public class TeamController implements TeamControllerApi
       {
          throw new NotFoundException("Handläggare not found: idTyp=" + idTyp + ", idVarde=" + idVarde);
       }
-      return new GetBehorigheterResponse(behorigheter.stream().map(TeamController::toApiBehorighet).toList());
-   }
-
-   private static se.fk.rimfrost.team.jaxrsspec.controllers.generatedsource.model.Behorighet toApiBehorighet(Behorighet behorighet)
-   {
-      return se.fk.rimfrost.team.jaxrsspec.controllers.generatedsource.model.Behorighet.valueOf(behorighet.name());
+      return new GetBehorigheterResponse(behorigheter);
    }
 }
