@@ -140,4 +140,45 @@ class TeamControllerTest
             .then()
             .statusCode(404);
    }
+
+   // GET /individ/{idTyp}/{idVarde}/behorigheter (FKPOC-931)
+
+   @Test
+   void getBehorigheter_individA_returnsSid()
+   {
+      given()
+            .when().get("/individ/" + TYP_ID + "/111111111/behorigheter")
+            .then()
+            .statusCode(200)
+            .body("behorigheter", hasSize(1))
+            .body("behorigheter[0]", is("SID"));
+   }
+
+   @Test
+   void getBehorigheter_individB_returnsEmptyList()
+   {
+      given()
+            .when().get("/individ/" + TYP_ID + "/222222222/behorigheter")
+            .then()
+            .statusCode(200)
+            .body("behorigheter", empty());
+   }
+
+   @Test
+   void getBehorigheter_unknownVarde_returns404()
+   {
+      given()
+            .when().get("/individ/" + TYP_ID + "/999999999/behorigheter")
+            .then()
+            .statusCode(404);
+   }
+
+   @Test
+   void getBehorigheter_wrongTypId_returns404()
+   {
+      given()
+            .when().get("/individ/wrong-typ-id/111111111/behorigheter")
+            .then()
+            .statusCode(404);
+   }
 }
