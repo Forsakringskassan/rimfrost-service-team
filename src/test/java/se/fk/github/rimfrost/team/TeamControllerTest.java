@@ -141,43 +141,42 @@ class TeamControllerTest
             .statusCode(404);
    }
 
-   // GET /individ/{idTyp}/{idVarde}/behorigheter (FKPOC-931)
+   // GET /individ/{idTyp}/{idVarde}/hasSidPermission (FKPOC-931)
 
    @Test
-   void getBehorigheter_individA_returnsSid()
+   void hasSidPermission_individA_returnsTrue()
    {
       given()
-            .when().get("/individ/" + TYP_ID + "/111111111/behorigheter")
+            .when().get("/individ/" + TYP_ID + "/111111111/hasSidPermission")
             .then()
             .statusCode(200)
-            .body("behorigheter", hasSize(1))
-            .body("behorigheter[0]", is("SID"));
+            .body(is("true"));
    }
 
    @Test
-   void getBehorigheter_individB_returnsEmptyList()
+   void hasSidPermission_individB_returnsFalse()
    {
       given()
-            .when().get("/individ/" + TYP_ID + "/222222222/behorigheter")
+            .when().get("/individ/" + TYP_ID + "/222222222/hasSidPermission")
             .then()
             .statusCode(200)
-            .body("behorigheter", empty());
+            .body(is("false"));
    }
 
    @Test
-   void getBehorigheter_unknownVarde_returns404()
+   void hasSidPermission_unknownVarde_returns404()
    {
       given()
-            .when().get("/individ/" + TYP_ID + "/999999999/behorigheter")
+            .when().get("/individ/" + TYP_ID + "/999999999/hasSidPermission")
             .then()
             .statusCode(404);
    }
 
    @Test
-   void getBehorigheter_wrongTypId_returns404()
+   void hasSidPermission_wrongTypId_returns404()
    {
       given()
-            .when().get("/individ/wrong-typ-id/111111111/behorigheter")
+            .when().get("/individ/wrong-typ-id/111111111/hasSidPermission")
             .then()
             .statusCode(404);
    }
