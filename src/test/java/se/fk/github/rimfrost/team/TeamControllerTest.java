@@ -164,20 +164,22 @@ class TeamControllerTest
    }
 
    @Test
-   void hasSidPermission_unknownVarde_returns404()
+   void hasSidPermission_unknownVarde_returnsFalse()
    {
       given()
             .when().get("/individ/" + TYP_ID + "/999999999/hasSidPermission")
             .then()
-            .statusCode(404);
+            .statusCode(200)
+            .body(is("false"));
    }
 
    @Test
-   void hasSidPermission_wrongTypId_returns404()
+   void hasSidPermission_wrongTypId_returnsFalse()
    {
       given()
             .when().get("/individ/wrong-typ-id/111111111/hasSidPermission")
             .then()
-            .statusCode(404);
+            .statusCode(200)
+            .body(is("false"));
    }
 }

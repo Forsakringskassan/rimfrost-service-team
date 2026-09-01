@@ -21,20 +21,20 @@ final class BehorighetStub
    }
 
    /**
-    * Returns whether the given handläggare has SID-behörighet, or {@code null} if identiteten
-    * inte är känd (fel {@code idTyp} eller okänt {@code idVarde}) — skiljt från en känd
-    * handläggare utan SID-behörighet, som ger {@code false}.
+    * Returns whether the given handläggare has SID-behörighet. Okänd identitet (fel
+    * {@code idTyp} eller okänt {@code idVarde}) ger {@code false}, samma som en känd
+    * handläggare utan SID-behörighet.
     *
     * @param idTyp typen av identifierare; måste matcha stubbens {@code TYP_ID}
     * @param idVarde identifierarens värde
-    * @return {@code true}/{@code false} om identiteten är känd, annars {@code null}
+    * @return {@code true} om handläggaren har SID-behörighet, annars {@code false}
     */
    static Boolean hasSidPermission(String idTyp, String idVarde)
    {
       if (!HandlaggareIdentitet.isKnownTyp(idTyp) || idVarde == null)
       {
-         return null;
+         return false;
       }
-      return HANDLAGGARE_SID_PERMISSION.get(idVarde);
+      return HANDLAGGARE_SID_PERMISSION.getOrDefault(idVarde, false);
    }
 }

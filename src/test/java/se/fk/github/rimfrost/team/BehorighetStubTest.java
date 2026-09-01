@@ -2,7 +2,6 @@ package se.fk.github.rimfrost.team;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.nullValue;
 
 import org.junit.jupiter.api.Test;
 
@@ -30,30 +29,30 @@ class BehorighetStubTest
    }
 
    @Test
-   void hasSidPermission_unknownVarde_returnsNull()
+   void hasSidPermission_unknownVarde_returnsFalse()
    {
       Boolean hasSidPermission = BehorighetStub.hasSidPermission(TYP_ID, "999999999");
-      assertThat(hasSidPermission, nullValue());
+      assertThat(hasSidPermission, is(false));
    }
 
    @Test
-   void hasSidPermission_wrongTypId_returnsNull()
+   void hasSidPermission_wrongTypId_returnsFalse()
    {
       Boolean hasSidPermission = BehorighetStub.hasSidPermission("wrong-typ-id", "111111111");
-      assertThat(hasSidPermission, nullValue());
+      assertThat(hasSidPermission, is(false));
    }
 
    @Test
-   void hasSidPermission_nullIdTyp_returnsNull()
+   void hasSidPermission_nullIdTyp_returnsFalse()
    {
       Boolean hasSidPermission = BehorighetStub.hasSidPermission(null, "111111111");
-      assertThat(hasSidPermission, nullValue());
+      assertThat(hasSidPermission, is(false));
    }
 
    @Test
-   void hasSidPermission_nullIdVarde_returnsNull()
+   void hasSidPermission_nullIdVarde_returnsFalse()
    {
       Boolean hasSidPermission = BehorighetStub.hasSidPermission(TYP_ID, null);
-      assertThat(hasSidPermission, nullValue());
+      assertThat(hasSidPermission, is(false));
    }
 }

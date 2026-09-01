@@ -98,16 +98,11 @@ public class TeamController implements TeamControllerApi
     * @param idTyp the type of identifier; must match the stub's {@code TYP_ID}
     * @param idVarde the identifier value
     * @return {@code true} if the handläggare has SID-behörighet, {@code false} otherwise
-    * @throws NotFoundException if idTyp or idVarde is not recognised
+    *       (including when idTyp/idVarde is not recognised)
     */
    @Override
    public Boolean hasSidPermission(String idTyp, String idVarde)
    {
-      Boolean hasSidPermission = BehorighetStub.hasSidPermission(idTyp, idVarde);
-      if (hasSidPermission == null)
-      {
-         throw new NotFoundException("Handläggare not found: idTyp=" + idTyp + ", idVarde=" + idVarde);
-      }
-      return hasSidPermission;
+      return BehorighetStub.hasSidPermission(idTyp, idVarde);
    }
 }
