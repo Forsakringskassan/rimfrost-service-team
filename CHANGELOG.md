@@ -2,6 +2,20 @@
 
 Changelog of rimfrost-service-team.
 
+## 0.1.0 (2026-09-01)
+
+### Features
+
+-  adds published openapi endpoint to repo ([79e02](https://github.com/Forsakringskassan/rimfrost-service-team/commit/79e0260dccf584c) LisaWedin_Ductus)  
+-  Add Behorighet model and hardcoded test data ([44cc8](https://github.com/Forsakringskassan/rimfrost-service-team/commit/44cc86c2e8992a6) LisaWedin_Ductus)  
+
+### Bug Fixes
+
+-  change to return false instead of null if handlaggare not found ([cce22](https://github.com/Forsakringskassan/rimfrost-service-team/commit/cce22d1dbceb3e3) Nils Elveros)  
+-  update the service with the endpount hasSidPermission ([0468a](https://github.com/Forsakringskassan/rimfrost-service-team/commit/0468ae7ea13cfc4) Nils Elveros)  
+-  Remove duplicate Behorighet enum, use generated model directly ([19e8f](https://github.com/Forsakringskassan/rimfrost-service-team/commit/19e8f82c39a23f6) LisaWedin_Ductus)  
+-  Handle null idTyp/idVarde in BehorighetStub and deduplicate identity check ([513aa](https://github.com/Forsakringskassan/rimfrost-service-team/commit/513aa21c496901e) LisaWedin_Ductus)  
+
 ## 0.0.4 (2026-08-19)
 
 ### Bug Fixes
