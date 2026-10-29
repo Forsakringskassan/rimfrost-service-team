@@ -140,46 +140,4 @@ class TeamControllerTest
             .then()
             .statusCode(404);
    }
-
-   // GET /individ/{idTyp}/{idVarde}/hasSidPermission (FKPOC-931)
-
-   @Test
-   void hasSidPermission_individA_returnsTrue()
-   {
-      given()
-            .when().get("/individ/" + TYP_ID + "/111111111/hasSidPermission")
-            .then()
-            .statusCode(200)
-            .body(is("true"));
-   }
-
-   @Test
-   void hasSidPermission_individB_returnsFalse()
-   {
-      given()
-            .when().get("/individ/" + TYP_ID + "/222222222/hasSidPermission")
-            .then()
-            .statusCode(200)
-            .body(is("false"));
-   }
-
-   @Test
-   void hasSidPermission_unknownVarde_returnsFalse()
-   {
-      given()
-            .when().get("/individ/" + TYP_ID + "/999999999/hasSidPermission")
-            .then()
-            .statusCode(200)
-            .body(is("false"));
-   }
-
-   @Test
-   void hasSidPermission_wrongTypId_returnsFalse()
-   {
-      given()
-            .when().get("/individ/wrong-typ-id/111111111/hasSidPermission")
-            .then()
-            .statusCode(200)
-            .body(is("false"));
-   }
 }

@@ -3,8 +3,8 @@ package se.fk.github.rimfrost.team;
 import java.util.UUID;
 
 /**
- * Delad validering av handläggar-identiteter (typId/varde), använd av både
- * {@link TeamController} och {@link BehorighetStub}, så att stubbarna inte kan
+ * Delad validering av handläggar-identiteter (typId/varde), använd av
+ * {@link TeamController}, så att stubbarna inte kan
  * hamna i otakt om vilken typId som räknas som en känd handläggare.
  */
 final class HandlaggareIdentitet
