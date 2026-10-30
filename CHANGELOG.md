@@ -2,6 +2,19 @@
 
 Changelog of rimfrost-service-team.
 
+## 0.1.1 (2026-10-30)
+
+### Bug Fixes
+
+-  update to new openapi version ([ad678](https://github.com/Forsakringskassan/rimfrost-service-team/commit/ad6783b6722cf75) Nils Elveros)  
+
+### Dependency updates
+
+- update forsakringskassan/.github digest to cbd74f1 ([d8b5e](https://github.com/Forsakringskassan/rimfrost-service-team/commit/d8b5e4617a6ffd0) renovate[bot])  
+- pin forsakringskassan/.github action to bfb01f7 ([f7079](https://github.com/Forsakringskassan/rimfrost-service-team/commit/f70792f13780de0) renovate[bot])  
+- add renovate.json ([d7ce9](https://github.com/Forsakringskassan/rimfrost-service-team/commit/d7ce98e05e784f0) renovate[bot])  
+## rimfrost-1_2 (2026-09-02)
+
 ## 0.1.0 (2026-09-01)
 
 ### Features
