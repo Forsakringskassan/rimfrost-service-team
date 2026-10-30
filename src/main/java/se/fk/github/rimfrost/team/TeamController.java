@@ -91,18 +91,4 @@ public class TeamController implements TeamControllerApi
       }
       return new GetIndividTeamResponse(teams);
    }
-
-   /**
-    * Returns whether the given handläggare has SID-behörighet (FKPOC-931).
-    *
-    * @param idTyp the type of identifier; must match the stub's {@code TYP_ID}
-    * @param idVarde the identifier value
-    * @return {@code true} if the handläggare has SID-behörighet, {@code false} otherwise
-    *       (including when idTyp/idVarde is not recognised)
-    */
-   @Override
-   public Boolean hasSidPermission(String idTyp, String idVarde)
-   {
-      return BehorighetStub.hasSidPermission(idTyp, idVarde);
-   }
 }
