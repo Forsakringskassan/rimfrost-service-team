@@ -2,6 +2,12 @@
 
 Changelog of rimfrost-service-team.
 
+## 0.1.2 (2026-11-02)
+
+### Bug Fixes
+
+-  trigger CI ([c69e1](https://github.com/Forsakringskassan/rimfrost-service-team/commit/c69e1cfa221adbf) Ulf Slunga)  
+
 ## 0.1.1 (2026-10-30)
 
 ### Bug Fixes
