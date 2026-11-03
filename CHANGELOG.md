@@ -2,6 +2,12 @@
 
 Changelog of rimfrost-service-team.
 
+## 0.1.3 (2026-11-03)
+
+### Bug Fixes
+
+-  update workflow permissions and pin to latest shared workflow SHA ([6bc06](https://github.com/Forsakringskassan/rimfrost-service-team/commit/6bc065c198b6546) Ulf Slunga)  
+
 ## 0.1.2 (2026-11-02)
 
 ### Bug Fixes
